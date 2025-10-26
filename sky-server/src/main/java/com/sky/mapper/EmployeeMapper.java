@@ -28,4 +28,7 @@ public interface EmployeeMapper {
 
     //分页查询，动态sql用xml文件
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    //动态sql修改属性
+    void update(Employee employee);
 }
