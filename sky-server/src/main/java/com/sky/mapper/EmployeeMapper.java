@@ -31,4 +31,8 @@ public interface EmployeeMapper {
 
     //动态sql修改属性
     void update(Employee employee);
+
+
+    @Select("select * from employee where id = #{id}")
+    Employee getById(Integer id);
 }
