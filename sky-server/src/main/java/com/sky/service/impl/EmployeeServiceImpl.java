@@ -78,12 +78,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setStatus(StatusConstant.ENABLE);
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
 
+
+        /**
+         * 这里有自定义注解加aop，对了在mapper执行相关sql语句进行增强，有这些语段的赋值，这里就可以不用了
+         * ，下面一些方法中的setcreatetime 和update...一样，就不注释了，这里统一说明
+         */
+/*
         employee.setCreateTime(LocalDateTime.now());
         employee.setUpdateTime(LocalDateTime.now());
 
 
         employee.setCreateUser(BaseContext.getCurrentId());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+        employee.setUpdateUser(BaseContext.getCurrentId());*/
         employeeMapper.insert(employee);
     }
 
